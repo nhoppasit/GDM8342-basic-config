@@ -66,6 +66,8 @@ public partial class DCVFlyoutPage : FlyoutPage {
     }
 
     private async void CaptureButton_Clicked(object sender, EventArgs e) {
-        await _viewModel.CameraViewModel.CaptureImageAsync();
+        //await _viewModel.CameraViewModel.CaptureImageAsync();
+        await _viewModel.TwoCamerasC1ViewModel.CaptureImageAsync();
+        await _viewModel.TwoCamerasC2ViewModel.CaptureImageAsync();
     }
 }
