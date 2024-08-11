@@ -1,8 +1,11 @@
+using System.IO.Ports;
+
 namespace GDM8342L1MauiApp.Pages.DCV1;
 
 public partial class DCVFlyoutPage : FlyoutPage {
     public DCVFlyoutPage() {
         InitializeComponent();
+        InitializeSerialPort();
     }
 
     protected override void OnSizeAllocated(double width, double height) {
@@ -20,4 +23,42 @@ public partial class DCVFlyoutPage : FlyoutPage {
             }
         }
     }
+
+    private void ButtonTestConnection_Clicked(object sender, EventArgs e) {
+        Test();
+    }
+
+    SerialPort _serialPort;
+    void InitializeSerialPort() {
+        _serialPort = new SerialPort("COM4", 115200); // Replace COM3 with your actual COM port
+        _serialPort.Open();
+    }
+
+    void Test() {
+        try {
+            // Ensure the serial port is open
+            if (_serialPort.IsOpen) {
+                // Send the *IDN? command
+                _serialPort.WriteLine("*IDN?");
+
+                // Read the response
+                string response = _serialPort.ReadLine();
+
+                // Display the response
+                Dispatcher.Dispatch(() => {
+                    DisplayAlert("GDM8342 Response", response, "OK");
+                });
+            } else {
+                Dispatcher.Dispatch(() => {
+                    DisplayAlert("Error", "Serial port is not open.", "OK");
+                });
+            }
+        } catch (Exception ex) {
+            // Handle exceptions
+            Dispatcher.Dispatch(() => {
+                DisplayAlert("Error", ex.Message, "OK");
+            });
+        }
+    }
+
 }
