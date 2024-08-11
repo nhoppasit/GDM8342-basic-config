@@ -2,10 +2,11 @@
 <FlyoutPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GDM8342L1MauiApp.Pages.DCV1.DCVFlyoutPage"
+            xmlns:vm="clr-namespace:GDM8342L1MauiApp.ViewModels"
              Title="DCV Flyout Page">
     
     <FlyoutPage.BindingContext>
-        <!--<local:CameraViewModel />-->
+        <vm:DCVFlyoutPageCombinedViewModel/>
     </FlyoutPage.BindingContext>
 
     <FlyoutPage.Flyout>
