@@ -1,11 +1,15 @@
+using GDM8342L1MauiApp.ViewModels;
 using System.IO.Ports;
 
 namespace GDM8342L1MauiApp.Pages.DCV1;
 
 public partial class DCVFlyoutPage : FlyoutPage {
+
+    private DCVFlyoutPageCombinedViewModel _viewModel;
     public DCVFlyoutPage() {
         InitializeComponent();
         InitializeSerialPort();
+        _viewModel = BindingContext as DCVFlyoutPageCombinedViewModel;
     }
 
     protected override void OnSizeAllocated(double width, double height) {
@@ -61,4 +65,7 @@ public partial class DCVFlyoutPage : FlyoutPage {
         }
     }
 
+    private async void CaptureButton_Clicked(object sender, EventArgs e) {
+        await _viewModel.CameraViewModel.CaptureImageAsync();
+    }
 }

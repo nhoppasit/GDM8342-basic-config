@@ -59,8 +59,13 @@
                                 Text="Demo 1" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
 
                         <!--<Label Text="Demo" BackgroundColor="#7c7c7c" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="1"/>-->
-                        <Label x:Name="VoltageLabel" Text="Demo" BackgroundColor="#7c7c7c" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="2"/>
-                        <Label Text="Demo" BackgroundColor="#7c7c7c" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="3"/>
+                        <Label x:Name="VoltageLabel" Text="-.- Volt" BackgroundColor="#7c7c7c" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="2"/>
+
+                        <!--<Label Text="IMAGE" BackgroundColor="#7c7c7c" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="3"/>-->
+                        <Image x:Name="CapturedImageView"
+                            Source="{Binding CameraViewModel.CapturedImage}"
+                            VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="3"/>
+
                         <Label Text="Demo" BackgroundColor="#7c7c7c" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="4"/>
 
                         <!--<Label Text="Demo" BackgroundColor="#7c7c7c" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Grid.Row="1" Grid.Column="0"/>-->
@@ -69,7 +74,11 @@
                         <Label Text="Demo" BackgroundColor="#7c7c7c" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Grid.Row="1" Grid.Column="3"/>
                         <Label Text="Demo" BackgroundColor="#7c7c7c" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Grid.Row="1" Grid.Column="4"/>
 
-                        <Label Text="Demo" BackgroundColor="#7c7c7c" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Grid.Row="2" Grid.Column="0"/>
+                        <!--Next Row-->
+                        <!--<Label Text="CAPTURE" BackgroundColor="#7c7c7c" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Grid.Row="2" Grid.Column="0"/>-->
+                        <Button x:Name="CaptureButton" Clicked="CaptureButton_Clicked" 
+                            Text="CAPTURE" BackgroundColor="#7c7c7c" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Grid.Row="2" Grid.Column="0"/>
+
                         <Label Text="Demo" BackgroundColor="#7c7c7c" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Grid.Row="2" Grid.Column="1"/>
                         <!--<Label Text="Demo" BackgroundColor="#7c7c7c" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Grid.Row="2" Grid.Column="2"/>-->
                         <Label Text="Demo" BackgroundColor="#7c7c7c" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Grid.Row="2" Grid.Column="3"/>
