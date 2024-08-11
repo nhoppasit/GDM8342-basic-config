@@ -3,6 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GDM8342L1MauiApp.Pages.DCV1.DCVFlyoutPage"
              Title="DCV Flyout Page">
+    
+    <FlyoutPage.BindingContext>
+        <!--<local:CameraViewModel />-->
+    </FlyoutPage.BindingContext>
 
     <FlyoutPage.Flyout>
         <ContentPage
